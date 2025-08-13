@@ -3,7 +3,7 @@
 ### Actividad 1:
 
 ### Breve introducción
-Una onda electromagnética es una perturbación que se propaga en el campo electromagnético.
+Una onda electromagnética es una **perturbación que se propaga en el campo electromagnético**.
 Está compuesta por un campo eléctrico y un campo magnético que oscilan perpendicularmente entre sí y a la dirección de propagación.
 Curiosamente, según las ecuaciones de Maxwell, una variación de un campo eléctrico genera un campo magnético y viceversa, por lo que no pueden existir de forma independiente en una onda propagándose en el vacío.
 Estas ondas transportan energía, momento y pueden interactuar con la materia.
@@ -23,30 +23,33 @@ De ahora en más, se hablará de **señales** y de **ondas** indistintamente.
 Las señales se pueden clasificar en dos grupos según cómo se analice su comportamiento en el **tiempo**: **continuas** y **discretas**.  
 
 ### Señales continuas
-Son aquellas definidas para **todos los instantes de tiempo** dentro de un intervalo determinado. Su representación es una función continua \(x(t)\), y pueden variar suavemente (variación continua y diferenciable) sin interrupciones.  
+Son aquellas definidas para **todos los instantes de tiempo** dentro de un intervalo determinado. Su representación es una función continua $x(t)$, y pueden variar suavemente (variación continua y diferenciable) sin interrupciones.  
 
 ### Señales discretas
-Son aquellas definidas únicamente en **instantes específicos de tiempo**. Se representan como secuencias \(x[n]\), donde \(n\) es un número entero que indica el índice temporal. Estas señales son más comunes en sistemas digitales.
+Son aquellas definidas únicamente en **instantes específicos de tiempo**. Se representan como secuencias $x[n]$, donde $n$ es un número entero que indica el índice temporal. Estas señales son más comunes en sistemas digitales.
 
 
 ### Análisis de la onda
 (acá va la URL de la imagen local en github)
 
-En la imagen se observa una onda senoidal cuya amplitud disminuye con la distancia. Es decir, se observa un efecto de atenuación. La frecuencia de la onda se mantiene constante.
+En la imagen se observa una onda senoidal cuya amplitud disminuye con la distancia. Es decir, se observa un efecto de **atenuación**. La frecuencia de la onda se mantiene constante.
 
-La frecuencia \(f\) de la onda se puede calcular usando la relación:
-\[
-f = \frac{v}{\lambda}
-\]
+La frecuencia $f$ de la onda se puede calcular usando la relación:
+
+$$
+\Large f = \frac{v}{\lambda}
+$$
+
 donde:
-- \(v\) es la velocidad de propagación de la onda
-- \(\lambda\) es la longitud de onda.
+- $v$ es la velocidad de propagación de la onda
+- $\lambda$ es la longitud de onda.
 
-De la imagen se extrae que \(\lambda = 60\,\text{mm} = 0.06\,\text{m}\).  
-Suponiendo que la onda se propaga en el vacío a velocidad \(v = 3\times10^8 \,\text{m/s}\), se obtiene:
-\[
-f = \frac{3\times10^8}{0.06} \approx 5 \,\text{GHz}.
-\]
+De la imagen se extrae que $\lambda = 60\ \text{mm} = 0.06\ \text{m}$.  
+Suponiendo que la onda se propaga en el vacío a velocidad $v = 3\times10^8 \ \text{m/s}$, se obtiene:
+
+$$
+\Large f = \frac{3\times10^8}{0.06} = 5 \ \text{GHz}
+$$
 
 ### Bandas del espectro según la ITU y su relación con la onda analizada
 
@@ -70,7 +73,7 @@ Un ejemplo de dispositivo que opera en estas bandas son los routers Wi-Fi, que u
 ### Análisis de la atenuación
 La línea roja en la imagen representa como la **amplitud de la señal** se **atenúa exponencialmente** con la distancia. Visto solo en dos dimensiones.  
 
-Esta atenuación influye sobre los dispositivos que utilizan **señales electromagnéticas para transmitir datos**. Un caso muy común son los **routers Wi-Fi**: por ejemplo, la comunicación entre un celular y el router puede disminuir significativamente a medida que ambos se alejan.
+Esta atenuación influye sobre los dispositivos que utilizan **señales electromagnéticas para transmitir datos**. Un caso muy común son los routers Wi-Fi: por ejemplo, la comunicación entre un celular y el router puede disminuir significativamente a medida que ambos se alejan.
 
 La atenuación de la señal afecta a transmisiones por telefonía celular, cable coaxial y fibra óptica, pero de distintas formas.
 
@@ -78,18 +81,20 @@ Se debe tener en cuenta que, cualquiera que sea el medio que atraviesa la señal
 
 Si bien podemos suponer que la energía total de la onda electromagnética se mantiene constante, al expandirse en todas las direcciones, su intensidad en una sola dirección o eje disminuye. Lo que se percibe como atenuación.
 
-*Analizando cada caso*:
-i) La telefonía celular se comunica de forma inalámbrica, lo que significa que las ondas electromagnéticas viajan libres en el espacio sin un medio físico que las confine.
+**Analizando cada caso:**
+
+1. La telefonía celular se comunica de forma inalámbrica, lo que significa que las ondas electromagnéticas viajan libres en el espacio sin un medio físico que las confine.
 Esto permite que la onda se expanda en todas direcciones desde la antena emisora, lo que provoca que la potencia se distribuya sobre un área cada vez mayor conforme aumenta la distancia, siguiendo la ley del cuadrado inverso.
 Además, durante su propagación, la onda puede sufrir absorción por la atmósfera, pérdidas por dispersión, reflexión y difracción al encontrarse con obstáculos como edificios, árboles o el terreno.
 
-ii) Los cables coaxiales están formados por distintas capas: un conductor central, un dieléctrico que lo separa de un conductor externo (blindaje) y una cubierta protectora.
+2. Los cables coaxiales están formados por distintas capas: un conductor central, un dieléctrico que lo separa de un conductor externo (blindaje) y una cubierta protectora.
 El blindaje y la geometría coaxial permiten que la onda electromagnética viaje en el interior del cable, minimizando la radiación y aislándola del ruido electromagnético externo.
 Lo que medimos en los extremos del cable no es la “onda” directamente, sino la señal eléctrica (tensión y corriente) asociada a esa onda electromagnética.
 Tanto el conductor interno como el externo tienen una resistencia finita, por lo que parte de la energía de la onda se pierde como calor debido al efecto Joule.
 Aunque el coaxial es muy eficiente en contener la energía, existen pérdidas adicionales por el dieléctrico y pequeñas fugas de radiación, lo que provoca una atenuación mínima pero inevitable de la señal a lo largo del cable.
 
-iii) La transmisión por fibra óptica es actualmente una de las más eficientes. Ya que guía pulsos de luz (fotones) a través de un núcleo de vidrio o plástico con mínimas pérdidas. Sin embargo, la atenuación sigue existiendo.
+3. La transmisión por fibra óptica es actualmente una de las más eficientes. Ya que guía pulsos de luz (fotones) a través de un núcleo de vidrio o plástico con mínimas pérdidas. Sin embargo, la atenuación sigue existiendo.
 A medida que el haz de luz avanza y se refleja internamente en las paredes del núcleo por reflexión total, una pequeñísima fracción de la energía se pierde en cada rebote debido a absorción en el material y a imperfecciones microscópicas.
 Además, el material de la fibra no es perfectamente transparente. Ciertos átomos y enlaces químicos absorben parte de la energía de los fotones y las impurezas o irregularidades dispersan la luz en otras direcciones.
 Estos procesos hacen que la potencia óptica disminuya gradualmente con la distancia, aunque a un ritmo mucho menor que en cables eléctricos o en enlaces inalámbricos.
+
