@@ -30,7 +30,7 @@ Son aquellas definidas únicamente en **instantes específicos de tiempo**. Se r
 
 
 ### Análisis de la onda
-(acá va la URL de la imagen local en github)
+![Onda](imgOnda.png)
 
 En la imagen se observa una onda senoidal cuya amplitud disminuye con la distancia. Es decir, se observa un efecto de **atenuación**. La frecuencia de la onda se mantiene constante.
 
@@ -97,4 +97,5 @@ Aunque el coaxial es muy eficiente en contener la energía, existen pérdidas ad
 A medida que el haz de luz avanza y se refleja internamente en las paredes del núcleo por reflexión total, una pequeñísima fracción de la energía se pierde en cada rebote debido a absorción en el material y a imperfecciones microscópicas.
 Además, el material de la fibra no es perfectamente transparente. Ciertos átomos y enlaces químicos absorben parte de la energía de los fotones y las impurezas o irregularidades dispersan la luz en otras direcciones.
 Estos procesos hacen que la potencia óptica disminuya gradualmente con la distancia, aunque a un ritmo mucho menor que en cables eléctricos o en enlaces inalámbricos.
+
 
