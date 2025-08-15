@@ -99,3 +99,30 @@ Además, el material de la fibra no es perfectamente transparente. Ciertos átom
 Estos procesos hacen que la potencia óptica disminuya gradualmente con la distancia, aunque a un ritmo mucho menor que en cables eléctricos o en enlaces inalámbricos.
 
 
+### Actividad 2:
+
+## Tipo y modo de transmision:
+
+El sistema representado en la imagen muestra un transmision serie, simplex y sincrono, estas caracteristicas implican lo siguiente:
+
+**Serie (formato)**: Los bits se envían de a uno por el mismo canal en lugar de enviarlos en paralelo.
+
+**Sincrona (temporizacion)**: Existe una línea de reloj compartida que marca exactamente cuándo leer cada bit, evitando la necesidad de bits de inicio/parada.
+
+**Simplex (direccionalidad)**: La comunicación ocurre solo en un sentido (el transmisor envía y el receptor solo recibe).
+
+Este sistema tiene una velocidad de transmision alta, pero no cumple con la bidiriccionalidad requerida, por ende no es el paradigma adecuado.
+
+## Representacion de cuarta letra
+
+La cuarta letra del nombre de grupo es la "g", por ende en binario se representaria como 001100111
+
+![Letra](imgLetra_g.png)
+
+## Medicion de bit 
+
+Debido a que la señal no cambia instantáneamente (pendientes visibles), el muestreo se hace en el centro de cada intervalo de bit para evitar errores por transiciones.
+
+Si la duración de un bit es Tb, el receptor debe muestrear en Tb/2, 3Tb/2, 5Tb/2...
+
+Esto asegura que se lea el valor estable del bit y no la transición.
