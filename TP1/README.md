@@ -126,3 +126,130 @@ Debido a que la señal no cambia instantáneamente (pendientes visibles), el mue
 Si la duración de un bit es Tb, el receptor debe muestrear en Tb/2, 3Tb/2, 5Tb/2...
 
 Esto asegura que se lea el valor estable del bit y no la transición.
+
+### Actividad 4:
+
+## Construcción de red simple en software Packet Tracer 
+
+Se comienza colocando solamente un router inalámbrico, WRT300N, y configurando el mismo con las siguientes características:
+
+- IP : 192.168.0.1
+- Subnet Mask : 255.255.255.0
+- SSID : pingFloyd
+- Authentication : WPA2-PSK
+
+Se presenta la configuración en Packet Tracer: 
+
+![PacketTracer](packetTracer.png)
+
+Analizando el router podemos observar que el mismo opera en la frecuencia de 2.4 GHz, según el analisis realizado anteriormente y con las definiciones de la ITU podemos afirmar que el router opera en la banda llamada UHF (Ultra Alta Frecuencia). Dentro del espectro electromagnético podemos encontrar que las ondas que operan con estas frecuencias se encuentran en la región de las ondas de radio, dentro de una banda de frencuencias también conocidas como ISM (Industrial, Scientific and Medical), que es una banda liberada para uso sin licencia en muchos países.
+
+A continuación vamos a agregar diferentes dispositivos a la red, entre ellos una PC de escritorio y una laptop.
+
+![RedSimple](redSimple.png)
+
+Mediante la función de Command Prompt vamos a corrobar la conectividad entre los dispositivos y su correcto funcionamiento, primero utilizaremos la función "ipconfig" para visualizar la conectividad de cada dispositivo y sus respectivas características.
+
+## Desde la PC de escritorio podemos visualizar: 
+
+C:\> ipconfig
+
+FastEthernet0 Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+
+   Link-local IPv6 Address.........: FE80::202:4AFF:FE92:2097
+
+   IPv6 Address....................: ::
+
+   IPv4 Address....................: 192.168.0.101
+
+   Subnet Mask.....................: 255.255.255.0
+
+   Default Gateway.................: ::
+                                     192.168.0.1
+
+Bluetooth Connection:
+
+   Connection-specific DNS Suffix..: 
+
+   Link-local IPv6 Address.........: ::
+
+   IPv6 Address....................: ::
+
+   IPv4 Address....................: 0.0.0.0
+
+   Subnet Mask.....................: 0.0.0.0
+
+   Default Gateway.................: ::
+                                     0.0.0.0
+
+## Desde la laptop podemos visualizar: 
+
+C:\>ipconfig
+
+Bluetooth Connection:(default port)
+
+   Connection-specific DNS Suffix..: 
+
+   Link-local IPv6 Address.........: ::
+
+   IPv6 Address....................: ::
+
+   IPv4 Address....................: 0.0.0.0
+
+   Subnet Mask.....................: 0.0.0.0
+
+   Default Gateway.................: ::
+                                     0.0.0.0
+
+Wireless0 Connection:
+
+   Connection-specific DNS Suffix..: 
+
+   Link-local IPv6 Address.........: FE80::2D0:58FF:FEA3:46AA
+
+   IPv6 Address....................: ::
+
+   IPv4 Address....................: 192.168.0.100
+
+   Subnet Mask.....................: 255.255.255.0
+
+   Default Gateway.................: ::
+                                     192.168.0.1
+
+Ahora para verificar la conectividad entre ambos vamos a realizar diferentes pings desde un dispositivo a otro, para ello haremos uso de la función "ping" y de la IP del dispositivo al que le realizaremos el ping. La siguiente imagen muestra la salida al ejecutar ese comando:
+
+![Conexion](conectividad.png)
+
+Al observar la representación del modelo físico podemos visualizar el alcance que posee el router inalámbrico y la red Wi-Fi:
+
+![Alcance](limiteWiFi.jpg)
+
+Para concluir la experiencia se agregará una laptop más, primero veremos como funciona dentro del rango alcanzable del Wi-Fi y posteriormente la sacaremos fuera del mismo y observaremos su conectividad y estado.
+
+Antes de conectar la notebook al router Wi-Fi podemos notar como disminuye la potencia de la señal al estar el dispositivo casi al limite del alcance máximo, es decir, al aumentar la distancia entre el router y el dispositivo final:
+
+![Potencia](potenciaSeñal.jpeg)
+
+Ahora una vez conectada la laptop al Wi-Fi podemos observar la interfaz de esta nuevamente haciendo uso del comando ipconfig:
+
+![laptopDentro](laptopDentro.jpeg)
+
+Ademas corroboramos la conexion con las otras computadoras realizando pings entre ellas y chequeando que se lleven a cabo con exito, primero desde la ultima laptop hacia la colocada al principio: 
+
+![laptopDentroConexion](laptopDentroConexion.jpeg)
+
+Ahora realizaremos el ping al reves, devolviendoselo a la laptop más reciente: 
+
+![pingNuevo](pingALaptopDentro.jpeg)
+
+El último paso es colocarla fuera del rango del Wi-Fi y chequear si existe comunicacion entre los dispositivos, de esta manera se comprobará que la conexión y comunicación se está realizando gracias al correcto funcionamiento del router, primero se realiza un ping desde la laptop que está fuera del rango hacia un dispositivo dentro del mismo:
+
+![pingUltimo](laptopFueraConexion.jpeg)
+
+Notaremos que se produce un "time out" , se envian 4 paquetes pero no se recibe ninguno generando una perdida o loss del 100%, esto debido a que no existe conexión alguna entre los dispositivos, correspondiendose con lo esperado. La última verificación será hacer uso del comando tracert que nos muestra la ruta que siguen los diferentes paquetes para llegar a su destino, mostrandonos todos los saltos o intermediarios y el respectivo tiempo que tardan. 
+
+![Trazado](tracert.jpeg)
+
+La imagen nos muestra lo esperado, se quiere seguir la ruta que siguen los paquetes pero al no existir conexión entre los dispositivos no existe tal ruta y el tiempo que tomarían tampoco se marca. Notamos que al momento de introducir la laptop dentro del rango del Wi-Fi automáticamente se muestra el tiempo y la traza se completa. Luego se vuelve a ejecutar el mismo comando con la laptop totalmente conectada al Wi-Fi y la traza se muestra de manera exitosa.
