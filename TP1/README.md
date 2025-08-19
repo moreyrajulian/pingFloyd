@@ -127,6 +127,70 @@ Si la duración de un bit es Tb, el receptor debe muestrear en Tb/2, 3Tb/2, 5Tb/
 
 Esto asegura que se lea el valor estable del bit y no la transición.
 
+### Actividad 3
+
+## Gráfico: Modulación de Señal
+
+## Ejemplo 1: PSK
+
+![imgPSK1](imgPSK1.png)
+
+El gráfico representa la señal **0 1 1 0 1 1 0 1** modulada bajo el protocolo **PSK**.
+
+### Ejemplo 2: PSK
+
+![imgPSK2](imgPSK2.png)
+
+En este caso, se modula la señal **0 1 1 1 0 1 1 0**.
+
+---
+
+## Principales Técnicas de Modulación Digital
+
+Las tres familias clásicas son:
+
+1. **ASK (Amplitude Shift Keying):**  
+   Variación de amplitud (ejemplo: OOK).
+
+2. **FSK (Frequency Shift Keying):**  
+   Variación de frecuencia según el bit.
+
+3. **PSK (Phase Shift Keying):**  
+   Variación de fase según el bit.
+
+### Variantes de PSK
+
+- **QPSK (Quadrature PSK):**  
+  Utiliza 4 fases distintas para codificar 2 bits por símbolo.
+
+- **8-PSK, 16-PSK, etc.:**  
+  Aumentan la cantidad de bits por símbolo, pero requieren mayor SNR.
+
+- **DQPSK (Differential QPSK):**  
+  La información está en el cambio de fase relativo, no en la fase absoluta.
+
+Además, existen combinaciones avanzadas como **QAM (Quadrature Amplitude Modulation)**, que mezcla amplitud y fase.
+
+---
+
+## BER (Bit Error Rate)
+
+El **BER (Bit Error Rate)** es la **tasa de error de bits**: la proporción de bits recibidos erróneamente respecto al total de bits transmitidos.
+
+### Comparación de Técnicas según BER
+
+- **ASK/OOK:**  
+  Más vulnerable al ruido, ya que el ruido en amplitud puede confundirse fácilmente con un 1.
+
+- **FSK:**  
+  Mejor desempeño en ambientes ruidosos porque la frecuencia es más robusta.
+
+- **PSK (especialmente BPSK):**  
+  Mejor relación señal/ruido y menor BER que ASK y FSK con la misma potencia de transmisión.
+
+- **QAM:**  
+  Eficiente en ancho de banda, pero más sensible al ruido.
+
 ### Actividad 4:
 
 ## Construcción de red simple en software Packet Tracer 
