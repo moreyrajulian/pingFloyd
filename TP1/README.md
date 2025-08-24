@@ -1,8 +1,40 @@
-## Trabajo práctico N°1
+# Trabajo práctico N°1
 
-### Actividad 1:
+**Nombres**  
+- Callovi, Lautaro
+- Galoppo, José M.
+- Moreyra, Julián
+- Rivera, Luis M.
 
-### Breve introducción
+**Nombre del grupo**: pingFloyd
+
+**Nombre del centro educativo**: FCEFYN - UNC
+
+**Nombre del curso o materia**: Comunicación de datos
+
+**Profesores**
+- Solinas, Miguel A.
+- Henn, Santiago M.
+
+**Fecha**
+25 de agosto de 2025
+
+---
+### Información de los autores
+ 
+**Información de contacto**:
+- jose.maria.galoppo@mi.unc.edu.ar (Galoppo, José M.)
+- luismarianorivera.25@mi.unc.edu.ar (Rivera, Luis M.)
+
+---
+
+## Resumen
+En este trabajo se abordaron conceptos físicos que caracterizan a las ondas electromagnéticas, así como principios de comunicación de datos y técnicas de manipulación de la onda para su transmisión. Se analizaron diferentes formas de modulación y su adecuación a distintos tipos de canales. Finalmente, se construyó y evaluó una pequeña red en Packet Tracer.
+
+
+---
+
+## Introducción
 Una onda electromagnética es una **perturbación que se propaga en el campo electromagnético**.
 Está compuesta por un campo eléctrico y un campo magnético que oscilan perpendicularmente entre sí y a la dirección de propagación.
 Curiosamente, según las ecuaciones de Maxwell, una variación de un campo eléctrico genera un campo magnético y viceversa, por lo que no pueden existir de forma independiente en una onda propagándose en el vacío.
@@ -315,5 +347,6 @@ El último paso es colocarla fuera del rango del Wi-Fi y chequear si existe comu
 Notaremos que se produce un "time out" , se envian 4 paquetes pero no se recibe ninguno generando una perdida o loss del 100%, esto debido a que no existe conexión alguna entre los dispositivos, correspondiendose con lo esperado. La última verificación será hacer uso del comando tracert que nos muestra la ruta que siguen los diferentes paquetes para llegar a su destino, mostrandonos todos los saltos o intermediarios y el respectivo tiempo que tardan. 
 
 ![Trazado](tracert.jpeg)
+
 
 La imagen nos muestra lo esperado, se quiere seguir la ruta que siguen los paquetes pero al no existir conexión entre los dispositivos no existe tal ruta y el tiempo que tomarían tampoco se marca. Notamos que al momento de introducir la laptop dentro del rango del Wi-Fi automáticamente se muestra el tiempo y la traza se completa. Luego se vuelve a ejecutar el mismo comando con la laptop totalmente conectada al Wi-Fi y la traza se muestra de manera exitosa.
