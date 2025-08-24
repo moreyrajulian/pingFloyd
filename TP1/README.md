@@ -101,31 +101,29 @@ Estos procesos hacen que la potencia óptica disminuya gradualmente con la dista
 
 ### Actividad 2:
 
-## Tipo y modo de transmision:
+## Tipo y modo de transmisión
 
-El sistema representado en la imagen muestra un transmision serie, simplex y sincrono, estas caracteristicas implican lo siguiente:
+El sistema representado en la imagen corresponde a una transmisión **serie**, **simplex** y **síncrona**. Estas características implican lo siguiente:
 
-**Serie (formato)**: Los bits se envían de a uno por el mismo canal en lugar de enviarlos en paralelo.
+- **Serie (formato):** Los bits se envían uno a uno por el mismo canal, en lugar de transmitirse en paralelo.
+- **Síncrona (temporización):** Existe una línea de reloj compartida que indica exactamente cuándo debe leerse cada bit, eliminando la necesidad de bits de inicio y parada.
+- **Simplex (direccionalidad):** La comunicación se realiza en un solo sentido; el transmisor envía y el receptor únicamente recibe.
 
-**Sincrona (temporizacion)**: Existe una línea de reloj compartida que marca exactamente cuándo leer cada bit, evitando la necesidad de bits de inicio/parada.
+Este sistema permite una velocidad de transmisión elevada, pero no cumple con la bidireccionalidad requerida, por lo que no es el paradigma más adecuado para ciertos escenarios.
 
-**Simplex (direccionalidad)**: La comunicación ocurre solo en un sentido (el transmisor envía y el receptor solo recibe).
+## Representación de la cuarta letra
 
-Este sistema tiene una velocidad de transmision alta, pero no cumple con la bidiriccionalidad requerida, por ende no es el paradigma adecuado.
-
-## Representacion de cuarta letra
-
-La cuarta letra del nombre de grupo es la "g", por ende en binario se representaria como 001100111
+La cuarta letra del nombre del grupo es "g", que en binario se representa como **001100111**.
 
 ![Letra](imgLetra_g.png)
 
 ## Medicion de bit 
 
-Debido a que la señal no cambia instantáneamente (pendientes visibles), el muestreo se hace en el centro de cada intervalo de bit para evitar errores por transiciones.
+Dado que la señal no cambia instantáneamente (se observan pendientes), el muestreo debe realizarse en el centro de cada intervalo de bit para evitar errores durante las transiciones.
 
-Si la duración de un bit es Tb, el receptor debe muestrear en Tb/2, 3Tb/2, 5Tb/2...
+Si la duración de un bit es $T_b$, el receptor debe muestrear en los instantes $T_b/2$, $3T_b/2$, $5T_b/2$, etc.
 
-Esto asegura que se lea el valor estable del bit y no la transición.
+Esto garantiza la lectura del valor estable del bit y no de la transición.
 
 ### Actividad 3
 
