@@ -35,13 +35,12 @@ En este trabajo se abordaron conceptos físicos que caracterizan a las ondas ele
 ---
 ## Introducción
 En esta primera actividad de laboratorio se repasan conceptos básicos pero importantes, vistos en otras materias, con la intención de adecuarnos al contexto de la asignatura Comunicación de Datos.  
-
 Se aborda la definición de onda electromagnética, su composición y el "cómo" se usa para transmitir información. Asimismo, se revisa la teoría de señales continuas y discretas en el tiempo, incluyendo sus tipos y modos de transmisión. También se introducen conceptos fundamentales de la comunicación digital de señales, como la modulación y las características del canal.  
-
 El trabajo concluye con la construcción de una pequeña red en el simulador Packet Tracer, lo que permite familiarizarnos con el entorno de trabajo, sus herramientas y posibilidades.
+
 ---
 # Desarrollo
-##Actividad 1
+## Actividad 1
 Una onda electromagnética es una **perturbación que se propaga en el campo electromagnético**.
 Está compuesta por un campo eléctrico y un campo magnético que oscilan perpendicularmente entre sí y a la dirección de propagación.
 Curiosamente, según las ecuaciones de Maxwell, una variación de un campo eléctrico genera un campo magnético y viceversa, por lo que no pueden existir de forma independiente en una onda propagándose en el vacío.
@@ -182,7 +181,6 @@ El gráfico representa la señal **0 1 1 0 1 1 0 1** modulada bajo el protocolo 
 
 En este caso, se modula la señal **0 1 1 1 0 1 1 0**.
 
----
 
 ### Principales Técnicas de Modulación Digital
 
@@ -210,8 +208,6 @@ Las tres familias clásicas son:
 
 Además, existen combinaciones avanzadas como **QAM (Quadrature Amplitude Modulation)**, que mezcla amplitud y fase.
 
----
-
 ### BER (Bit Error Rate)
 
 El **BER (Bit Error Rate)** es la **tasa de error de bits**: la proporción de bits recibidos erróneamente respecto al total de bits transmitidos.
@@ -232,7 +228,7 @@ El **BER (Bit Error Rate)** es la **tasa de error de bits**: la proporción de b
 
 ## Actividad 4
 
-## Construcción de red simple en software Packet Tracer 
+### Construcción de red simple en software Packet Tracer 
 
 Se comienza colocando solamente un router inalámbrico, WRT300N, y configurando el mismo con las siguientes características:
 
@@ -363,4 +359,5 @@ La imagen nos muestra lo esperado, se quiere seguir la ruta que siguen los paque
 Se logró repasar conceptos fundamentales que son base para la materia Comunicación de Datos. Siendo estos: ondas electromagnéticas, tipos de transmisión y técnicas de modulación. 
 Además, se realizó una primera experiencia con la herramienta Packet Tracer, lo que permitió aplicar los conocimientos teóricos, familiarizarse con el entorno de simulación y observar el comportamiento de una red básica. 
 Estas actividades refuerzan la comprensión de los principios de transmisión de datos y sientan las bases para estudios más avanzados en la materia.
+
 
