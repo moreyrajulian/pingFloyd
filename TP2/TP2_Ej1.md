@@ -101,3 +101,58 @@ Es importante aclarar que esto **no tiene relación con el efecto Doppler**. La 
 
 El efecto Doppler es un fenómeno fundamental en las telecomunicaciones, cuya importancia aumenta con la frecuencia de la señal y la velocidad relativa entre emisor y receptor. 
 En comunicaciones inalámbricas de alta frecuencia, como 5G mmWave o enlaces satelitales, el corrimiento Doppler puede ser significativo y requiere compensación activa para mantener la integridad de la señal.
+
+
+### Actividad N°2
+
+### Efecto del ruido en las comunicaciones
+
+La imagen mostrada describe una onda electromagnetica para la transmision de datos a un dispositivo movil, en su trayectoria esta se ve afectada por ruido. Sus caracteristicas principales son:
+
+- **Es una onda electromagnetica** que transporta informacion.
+- **Esta expuesta al ruido** (aleatorio, no deseado) que degrada la calidad de la senial.
+- **Atenuacion con la distancia**, es decir, la senial pierde potencia conforme viaja.
+- Puede sufrir **interferencias** de otras seniales en la misma banda.
+- **El receptor debe demodular y filtrar** para recuperar la senial original.
+
+
+
+
+### Efecto en bandas de transmision
+
+El ruido y la interferencia afectan en distinta medida según la banda de frecuencia:
+
+- **Frecuencias bajas**: son más resilientes, ya que tienen mayor alcance y mejor propagación, aunque su ancho de banda disponible es limitado.
+
+- **Frecuencias altas**: se ven más afectadas por el ruido, la atenuación y las interferencias, además de obstáculos físicos. Sin embargo, permiten mayor velocidad de transmisión de datos.
+
+#### La resiliencia de estas depende de:
+
+- **El tipo de modulación**: modulaciones robustas como BPSK o QPSK son más resistentes, mientras que modulaciones de mayor orden (16-QAM, 64-QAM) son más vulnerables al ruido.
+
+- **La redundancia y codificación de canal**: técnicas de corrección de errores ayudan a mitigar la degradación.
+
+### SNR y BER
+
+La **SNR** *(Signal to Noise Ratio)* es la relacion entre la potencial de la senial y la potencia del ruido, expresada en decibelios (dB). A mayor SNR, mejor la calidad de recepcion.
+
+$$
+\text{SNR}_{dB} = 10 \log_{10} \left( \frac{P_{\text{signal}}}{P_{\text{noise}}} \right)
+$$
+
+El **BER** *(Bit Error Rate)* por otro lado, es la tasa de error de bits, es decir, la proporcion de bits recibidios erroneamente respecto al total transmitido
+
+$$
+\text{BER} \approx \frac{c}{\log_2 M} \, Q\!\left(\sqrt{\frac{2 \cdot \log_2 M}{M-1} \cdot \frac{E_b}{N_0}}\right)
+$$
+
+#### ¿Como se relacionan?
+
+- **Una SNR alta** → menor probabilidad de errores → BER bajo.
+- **Una SNR baja** → la señal queda sumergida en el ruido → BER alto.
+
+Por eso, la SNR es un parámetro crítico para estimar el desempeño de un canal de comunicación digital.
+
+
+
+
