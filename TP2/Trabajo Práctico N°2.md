@@ -29,24 +29,34 @@
 - lautaro.callovi@mi.unc.edu.ar (Callovi, Lautaro Nicolás)
 ---
 
+
 ## Resumen
 
-El presente informe analiza el **efecto Doppler en las telecomunicaciones** [y aca los otros temas que tocaron]
-Se explican los casos más relevantes afectados por el efecto Doppler, desde comunicaciones celulares y satelitales hasta transmisiones por cable, y se ejemplifica la influencia de la frecuencia en la magnitud del efecto Doppler.
+Este informe presenta una visión integral sobre los principales desafíos y tecnologías en el ámbito de las comunicaciones de datos, abordando los siguientes temas:
+
+**Efecto Doppler:**
+- Fundamentos físicos y manifestación en sistemas celulares, satelitales y transmisiones por cable.
+- Impacto en la transmisión de señales y en la calidad de las comunicaciones.
+
+**Ruido y calidad de señal:**
+- Efectos del ruido, relación señal-ruido (SNR) y tasa de error de bits (BER).
+- Influencia en la confiabilidad y desempeño de los sistemas de comunicación.
+
+**Tecnologías de red:**
+- Análisis de Ethernet y cables UTP.
+- Funcionamiento, estructura y relevancia en la transmisión de datos.
+
+**Privacidad y seguridad:**
+- Trazabilidad de dispositivos mediante identificadores como la dirección MAC y el IMEI.
+- Alcance y limitaciones de herramientas como las VPN.
+
 ## Introducción
 
-El efecto Doppler es un fenómeno físico que afecta a las ondas cuando existe **movimiento relativo entre el emisor y el receptor**. Su estudio es fundamental en telecomunicaciones, ya que puede alterar la frecuencia percibida de las señales, especialmente en sistemas inalámbricos y de alta frecuencia.  
-En este informe se describe cómo se manifiesta el efecto Doppler en diferentes tipos de comunicaciones, se analizan los sistemas más susceptibles y los menos afectados, y se aclara la diferencia entre este efecto y otros fenómenos, como las interferencias en dispositivos electrónicos.
+En la actualidad, las telecomunicaciones son el pilar fundamental de la conectividad global, permitiendo la transmisión de información a gran velocidad y distancia. Sin embargo, detrás de cada comunicación exitosa existen múltiples desafíos físicos y tecnológicos que deben ser comprendidos y gestionados.
 
+Este desarrollo surge de la necesidad de analizar cómo fenómenos como el efecto Doppler, el ruido y la interferencia pueden afectar la calidad de las señales, y de qué manera las tecnologías de red y las estrategias de seguridad buscan mitigar estos problemas. A través de ejemplos prácticos y el estudio de casos reales, se busca no solo describir los conceptos técnicos, sino también reflexionar sobre su impacto en la vida cotidiana y en la evolución de las redes modernas.
 
-.
-.
-.
-
-.
-.
-.
-
+La motivación principal es brindar una comprensión integral de los factores que influyen en la transmisión de datos, destacando la importancia de la innovación tecnológica y la conciencia sobre la privacidad y la seguridad en un mundo cada vez más interconectado.
 
 # Desarrollo
 
