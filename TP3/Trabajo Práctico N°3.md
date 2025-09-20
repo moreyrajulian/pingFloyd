@@ -38,6 +38,24 @@
 
 ## Actividad 2
 
+a) La imagen nos ilustra dos tipos de transmision con fibra optica. En la izquierda se representa la **fibra monomodo**, en la cual un haz de luz viaja por un unico trayecto dentro del nucleo. Este tipo nos ofrece caracteristicas tales como:
++ Mayor ancho de banda
++ Baja atenuacion
++ Minima dispersion
+
+Esto resulta ideal para la transmision en largas distancias en altas velocidades. Sin embargo, tiene un costo elevado de implementacion debido a la presicion que requiere tanto la fibra como los emisores (laseres). 
+
+
+En la parte de la derecha de la imagen se representa la **fibra multimodo**, donde la luz se propagada a traves de varios caminos o modos. Este tipo de fibra es mas economica y sencilla de instalar, ya que suele utilizar LEDs como fuente de luz, pero representa dispersion modal, lo que la limita en distancia y velocidad de transmision.
+
+b) La **Ley de Snell** establece la relación entre los ángulos de incidencia y refracción de un rayo de luz al pasar de un medio a otro con diferente índice de refracción:
+$$
+n_1 \cdot \sin(\theta_1) = n_2 \cdot \sin(\theta_2)
+$$
+En la fibra óptica esta ley explica el fenómeno de reflexión interna total, que es el principio de funcionamiento básico de estas transmisiones. Si el ángulo de incidencia supera un valor crítico, la luz no atraviesa el revestimiento sino que se refleja completamente dentro del núcleo, permitiendo así su propagación a lo largo de la fibra. En el caso de la fibra monomodo, la luz viaja en una unica trayectoria, mientras que en la fibra multimodo son posibles múltiples de estas, todas regidas por la misma ley física.
+
+c) La relación entre las conexiones inalámbricas y la fibra óptica radica en que ambas transmiten información mediante ondas electromagnéticas, aunque en diferentes rangos del espectro. Las conexiones inalámbricas utilizan ondas de radio o microondas que viajan por el aire, mientras que la fibra óptica emplea luz en frecuencias mucho más altas, confinada dentro de la fibra.
+
 ## Actividad 3
 
 ## Actividad 4
