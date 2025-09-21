@@ -37,13 +37,13 @@ Cada nueva versión del estándar Wi‑Fi corrige vulnerabilidades de versiones 
 
 
 | - | WIFI 5 | WIFI 6 | WIFI 7 |
-|--------------|--------------|--------------|
-| Versión IEEE    | Fila1Col2    | Fila1Col3    | a|
-| Tasa de datos máxima    | Fila2Col2    | Fila2Col3    |a |
-| Banda(s)   | Fila2Col2    | Fila2Col3    |a |
-| Ancho de Banda    | Fila2Col2    | Fila2Col3    | a|
-| Modulación    | Fila2Col2    | Fila2Col3    |a |
-| Sistema de Seguridad    | Fila2Col2    | Fila2Col3    |a |
+|--------------|--------------|--------------|-------------|
+| Versión IEEE    | IEEE 802.11ac    | IEEE 802.11ax    | 802.11be|
+| Tasa de datos máxima    | Hasta 3.5 Gbps    | Hasta 9.6 Gbps    |Hasta 46 Gbps |
+| Banda(s)   | 5 GHz (también 2.4 GHz)    | 5 GHz (también 2.4 GHz)    |6 GHz (también 2.4 GHz y 5 GHz) |
+| Ancho de Banda    | Entre 80 y 160 MHz por canal    | Entre 80 y 160 MHz por canal    | Entre 80 y 320 MHz por canal|
+| Modulación    | 256-QAM    | 1024-QAM    |4096-QAM |
+| Sistema de Seguridad    | Hasta WPA2    | WPA3    |WPA3 |
 
 
 
