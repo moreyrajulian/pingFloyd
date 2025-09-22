@@ -1,21 +1,27 @@
-Introduccion - Parte de José
+## Introduccion - Parte de José
+Los estándares IEEE 802.3 e IEEE 802.11 son fundamentales para el buen funcionamiento de las redes hoy en día, ya sean cableadas (802.3) o inalámbricas (802.11).
+A medida que la tecnología fue avanzando, estos estándares se fueron modificando para ofrecer mejores prestaciones. Temas como velocidad, modulaciones e incluso aspectos normativos y de seguridad fueron cambiando con el paso de los años.
 
-Resumen - Parte de José
+## Resumen - Parte de José
+Se presenta parte de la evolución de los estándares IEEE 802.3 e IEEE 802.11.
+Se comenta la relación entre los protocolos y los niveles de seguridad.
+Se realiza una prueba práctica para determinar los estándares de red utilizados en la facultad.
 
-Desarrollo - Parte de José
+## Desarrollo - Parte de José
 
-Hubo un bardo con las cabeceras. Pero se solucionó piola
 
-Estándares 802.3 y 802.11
+### Estándares 802.3 y 802.11
 
-IEEE 802.3
+**IEEE 802.3**
+
 El estándar IEEE 802.3 se remonta a 1983 y fue el primer intento de estandarizar redes Ethernet, que previamente utilizaban otros formatos como Ethernet II. Este estándar buscaba normalizar las velocidades de transmisión y los medios físicos, que en ese momento eran principalmente cables coaxiales.
 
 Al inicio, existía una pequeña diferencia entre las cabeceras definidas por Ethernet y las de 802.3, particularmente en el campo ubicado después de las direcciones de destino y origen dentro del header.
 
 Desde entonces, el estándar ha tenido varias ampliaciones, abarcando aspectos como velocidades, redes virtuales (VLANs), hubs, switches y distintos tipos de medios. Una de las últimas modificaciones importantes fue IEEE 802.3df‑2024, publicada el 15 de marzo de 2024, en la que se establecieron nuevos parámetros MAC y PHY, así como nuevas cláusulas técnicas y anexos relacionados con el funcionamiento de Ethernet a altas velocidades.
 
-IEEE 802.11
+**IEEE 802.11**
+
 El estándar IEEE 802.11 se remonta a 1997 y tiene como objetivo estandarizar las redes inalámbricas. La primera versión incluía redes que utilizaban infrarrojo, tecnología que hoy en día ya no se usa, aunque aún forma parte del estándar.
 
 La versión IEEE 802.11b fue la primera en ser ampliamente aceptada, ya que ofrecía velocidades competitivas frente a Ethernet y los dispositivos que implementaban este estándar eran más económicos. Además, IEEE 802.11 implementa el protocolo CSMA/CA (Carrier Sense Multiple Access / Collision Avoidance) para gestionar el acceso al medio inalámbrico y evitar colisiones.
@@ -36,14 +42,14 @@ Actualmente, el estándar WPA3 es uno de los más recientes y seguros, ofreciend
 Cada nueva versión del estándar Wi‑Fi corrige vulnerabilidades de versiones anteriores, asegurando conexiones más confiables y seguras para los usuarios.
 
 
-| - | WIFI 5 | WIFI 6 | WIFI 7 |
-|--------------|--------------|--------------|-------------|
-| Versión IEEE    | IEEE 802.11ac    | IEEE 802.11ax    | 802.11be|
-| Tasa de datos máxima    | Hasta 3.5 Gbps    | Hasta 9.6 Gbps    |Hasta 46 Gbps |
-| Banda(s)   | 5 GHz (también 2.4 GHz)    | 5 GHz (también 2.4 GHz)    |6 GHz (también 2.4 GHz y 5 GHz) |
-| Ancho de Banda    | Entre 80 y 160 MHz por canal    | Entre 80 y 160 MHz por canal    | Entre 80 y 320 MHz por canal|
-| Modulación    | 256-QAM    | 1024-QAM    |4096-QAM |
-| Sistema de Seguridad    | Hasta WPA2    | WPA3    |WPA3 |
+| -                       | WIFI 5                         | WIFI 6                         | WIFI 7                         |
+|-------------------------|--------------------------------|--------------------------------|--------------------------------|
+| Versión IEEE            | IEEE 802.11ac                  | IEEE 802.11ax                  | IEEE 802.11be                  |
+| Tasa de datos máxima    | Hasta 3.5 Gbps                 | Hasta 9.6 Gbps                 | Hasta 46 Gbps                  |
+| Banda(s)                | 5 GHz (también 2.4 GHz)        | 5 GHz (también 2.4 GHz)        |6 GHz (también 2.4 GHz y 5 GHz) |
+| Ancho de Banda          | Entre 80 y 160 MHz por canal   | Entre 80 y 160 MHz por canal   | Entre 80 y 320 MHz por canal   |
+| Modulación              | 256-QAM                        | 1024-QAM                       |4096-QAM                        |
+| Sistema de Seguridad    | Hasta WPA2                     | Hasta WPA3                     |Hasta WPA3                      |
 
 
 
