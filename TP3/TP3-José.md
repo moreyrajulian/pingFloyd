@@ -53,6 +53,8 @@ Se puede observar en la imagen:
 Que al ser una red abierta no utiliza Wi‑Fi Protected Access y además no contiene cifrado. Por lo que la seguridad es nula.
 La version 802.11g (anterior a 802.11n) soporta hasta WPA2.
 
+### Versiones WIFI y sus características
+
 
 | -                       | WIFI 5                         | WIFI 6                         | WIFI 7                         |
 |-------------------------|--------------------------------|--------------------------------|--------------------------------|
