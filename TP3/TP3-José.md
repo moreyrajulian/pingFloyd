@@ -31,7 +31,7 @@ Uno de los últimos cambios importantes al estándar fue IEEE 802.11be‑2024 (�
 ### Experimento: Determinar versión del protocolo 802.11 de una red de la facultad
 ![cmd](codigocmd.png)
 
-Ejecutando el comando **netsh** en una notebook conectada a la red wifi, se pudo observar la versión del protocolo 802.11 de la red FCEFyN.
+Ejecutando el comando **netsh** en una notebook conectada a la red wifi, se pudo observar la versión del protocolo 802.11 de la red FCEFyN. Siendo la 802.11n.
 
 ### Redes y dispositivos incompatibles
 Si un dispositivo tiene una NIC que no soporta el estándar de la red (por ejemplo, Wi‑Fi), no podrá establecer conexión. La red puede no aparecer en la lista de redes disponibles, o bien, en algunos casos, la conexión se logra pero funciona muy lentamente y puede sufrir interrupciones frecuentes constantemente.
@@ -45,6 +45,13 @@ Una de las primeras formas de seguridad fue WEP (Wired Equivalent Privacy), que 
 Actualmente, el estándar WPA3 es uno de los más recientes y seguros, ofreciendo autenticación avanzada, cifrado individualizado y protección frente a ataques modernos, como el “key reinstallation attack” (KRACK).
 
 Cada nueva versión del estándar Wi‑Fi corrige vulnerabilidades de versiones anteriores, asegurando conexiones más confiables y seguras para los usuarios.
+
+### Experimento: Seguridad de una red de la facultad
+Se puede observar en la imagen:
+![cmd](codigocmd.png)
+
+Que al ser una red abierta no utiliza Wi‑Fi Protected Access y además no contiene cifrado. Por lo que la seguridad es nula.
+La version 802.11g (anterior a 802.11n) soporta hasta WPA2.
 
 
 | -                       | WIFI 5                         | WIFI 6                         | WIFI 7                         |
