@@ -28,6 +28,11 @@ La versión IEEE 802.11b fue la primera en ser ampliamente aceptada, ya que ofre
 
 Uno de los últimos cambios importantes al estándar fue IEEE 802.11be‑2024 (“Wi‑Fi 7”), publicado el 22 de julio de 2025. Esta versión introduce mejoras de rendimiento extremo (Extremely High Throughput, EHT), alcanzando velocidades de hasta 30 Gbps a nivel MAC, en bandas de frecuencia entre 1 GHz y 7.25 GHz. Además, incluye mejoras en latencia (worst case latency) y jitter, aumentando la confiabilidad de la conexión incluso en condiciones adversas.
 
+### Experimento: Determinar versión del protocolo 802.11 de una red de la facultad
+![cmd](codigocmd.png)
+
+Ejecutando el comando **netsh** en una notebook conectada a la red wifi, se pudo observar la versión del protocolo 802.11 de la red FCEFyN.
+
 ### Redes y dispositivos incompatibles
 Si un dispositivo tiene una NIC que no soporta el estándar de la red (por ejemplo, Wi‑Fi), no podrá establecer conexión. La red puede no aparecer en la lista de redes disponibles, o bien, en algunos casos, la conexión se logra pero funciona muy lentamente y puede sufrir interrupciones frecuentes constantemente.
 
