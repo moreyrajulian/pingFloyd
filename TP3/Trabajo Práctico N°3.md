@@ -58,6 +58,59 @@ c) La relación entre las conexiones inalámbricas y la fibra óptica radica en 
 
 ## Actividad 3
 
+# Protocolos de Comunicación Inalámbrica e IoT
+
+a) Protocolos y Estándares
+
+| Protocolo | ¿Está estandarizado? | Estándar / Última versión |
+|-----------|----------------------|---------------------------|
+| Wi-Fi     | Sí                   | IEEE 802.11 (última: 802.11be - Wi-Fi 7) |
+| Bluetooth | Sí                   | IEEE 802.15.1 / Bluetooth 5.4 |
+| ZigBee    | Sí                   | IEEE 802.15.4 |
+| NFC       | Sí                   | ISO/IEC 18092, ECMA-340 |
+| LTE       | Sí                   | 3GPP Release 8 (evoluciones hasta Release 14 LTE-Advanced Pro) |
+| GSM       | Sí                   | 3GPP TS 45.x / ETSI (GSM Release 1990+) |
+| 5G (3GPP) | Sí                   | 3GPP Release 15–18 (NR - New Radio) |
+| LoRa      | Parcial (LoRa propietario, LoRaWAN estandarizado) | LoRaWAN por LoRa Alliance (v1.0.4, 2021) |
+| NB-IoT    | Sí                   | 3GPP Release 13 en adelante |
+| SigFox    | No completamente (propietario) | Especificación propietaria de SigFox |
+| Z-Wave    | Sí (desde 2012 en ITU-T) | ITU-T G.9959 |
+
+---
+
+b) Gráfico de Alcance vs Tasa de Datos
+
+Ubicación aproximada de los protocolos en el gráfico (Data rate vs Distance):
+
+- **Wi-Fi** → ~100 m, hasta varios Gbps.  
+- **Bluetooth** → ~10 m, hasta 2–3 Mbps (Bluetooth 5.4 puede llegar a 100 m en modos especiales).  
+- **ZigBee** → ~10–100 m, hasta 250 kbps.  
+- **NFC** → <10 cm, hasta 424 kbps.  
+- **LTE** → ~10 km, hasta 300 Mbps.  
+- **GSM** → ~35 km (máx. celda), hasta 200 kbps (EDGE).  
+- **5G** → ~1–10 km, hasta 10 Gbps.  
+- **LoRa** → ~2–15 km, hasta 50 kbps.  
+- **NB-IoT** → ~10 km, hasta 250 kbps.  
+- **SigFox** → ~10–50 km, hasta 100 bps.  
+- **Z-Wave** → ~100 m, hasta 100 kbps.  
+
+![Grafica de tasa de datos y distancias](image.png)
+
+---
+
+c) Comparación de Medios de Transmisión
+
+| Característica | UTP | Fibra Óptica | Wi-Fi 802.11be (Wi-Fi 7) | Bluetooth 5.4 | 5G |
+|----------------|-----|--------------|---------------------------|---------------|----|
+| **Ancho de banda** | Hasta 10 Gbps (Cat6a/7), 40 Gbps en Cat8 | >1 Tbps (en laboratorio), típicamente 100 Gbps comercial | Hasta 46 Gbps | ~2 Mbps (modo clásico), hasta 2 Mbps LE; alcance extendido <1 Mbps | >10 Gbps (teórico, con anchos de banda de 400 MHz) |
+| **Distancias** | 100 m máx. | Varios km (decenas con repetidores) | ~100 m | 10–100 m | 1–10 km |
+| **Inmunidad a EMI/RFI** | Baja | Muy alta | Media (puede afectarse) | Media | Media-alta |
+| **Costos de medios/conectores/dispositivos** | Bajo | Alto | Medio | Bajo | Alto |
+| **¿Disponible en Packet Tracer?** | Sí | Sí | Sí (802.11ac/ax según versión) | No | No |
+
+---
+
+
 ## Actividad 4
 
 a) Al hablar de conectividad a Internet en un avión en vuelo surgen algunas tecnologías que pueden hacerlo posible. Aquí se encontrarán detalladas con sus características y limitaciones:
