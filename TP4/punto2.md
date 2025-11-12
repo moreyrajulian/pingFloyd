@@ -145,14 +145,14 @@ SW2(config-if)# end
 
 Verificacion de estados de VLAN e interfaces:
 
-![Brief de vlan](vlan_conf.png)
+![Brief de vlan](VLAN_conf.png)
 ![Brief de interfaces](interface_brief.png)
 
 ### 8. Verificacion de conectividad mediante ping
 ![ping pc](ping_pc.png)
 !![ping sw](ping_sw.png)
-
-##Conclusiones 
+---
+## Conclusiones 
 
 - Los switches pudieron comunicarse correctamente mediante sus interfaces VLAN 99.
 
