@@ -31,27 +31,32 @@
 
 ## Resumen
 
-Este informe detalla el estudio y la aplicación práctica de la segmentación de redes mediante Redes de Área Local Virtuales (VLANs). El trabajo abarca desde los fundamentos teóricos hasta implementaciones prácticas de complejidad creciente. 
-Inicialmente, se definen los conceptos teóricos clave, incluyendo la clasificación de redes (LAN, MAN, WAN), el funcionamiento de las VLANs y el protocolo de etiquetado IEEE 802.1Q. 
-Posteriormente, se demuestra una configuración de Capa 2 básica, implementando un enlace troncal (trunk) entre dos switches para permitir la comunicación de dispositivos en una misma VLAN. 
-Finalmente, el trabajo culmina con el despliegue de una simulación de red avanzada para una aeronave, integrando enrutamiento Inter-VLAN ("Router-on-a-Stick"), servicios DHCP, Listas de Control de Acceso (ACLs) para políticas de seguridad diferenciadas, y Traducción de Direcciones de Red (NAT) para gestionar el acceso controlado a Internet. Los resultados validan la correcta configuración y el cumplimiento de los requisitos en todos los escenarios mediante pruebas de conectividad.
+Este informe muestra el trabajo realizado sobre segmentación de redes usando VLANs. Lo que hicimos fue arrancar con la teoría básica y después ir armando configuraciones cada vez más complicadas.
+
+Primero repasamos los conceptos clave: qué son las redes LAN, MAN, WAN, cómo funcionan las VLANs y el protocolo IEEE 802.1Q que se usa para etiquetar las tramas.
+
+Después armamos una configuración simple de Capa 2, conectando dos switches con un enlace trunk para que los dispositivos de la misma VLAN puedan comunicarse aunque estén en switches diferentes.
+
+Por último, hicimos una simulación más completa de una red para un avión, donde metimos enrutamiento Inter-VLAN (Router-on-a-Stick), DHCP para asignar IPs automáticamente, ACLs para controlar quién puede acceder a qué, y NAT para que algunas redes puedan salir a Internet. Al final probamos todo con pings para verificar que funcionara bien.
 
 ---
 ## Introducción
 
 El objetivo de este trabajo práctico es aplicar los conceptos fundamentales de la comunicación de datos para diseñar, implementar y verificar redes segmentadas que respondan a distintos requisitos de conectividad y seguridad.
 
-El informe se estructura en tres partes principales que van desde la teoría hasta la práctica avanzada. La Actividad 1 establece el marco conceptual, definiendo la clasificación de redes según su alcance (PAN, LAN, MAN, WAN), el concepto de VLAN como mecanismo de segmentación lógica y el protocolo estándar IEEE 802.1Q, que permite el etiquetado de tramas (tagging) para el transporte de múltiples VLANs sobre enlaces troncales.
+El informe se divide en tres partes principales que van desde la teoría hasta la práctica avanzada. 
 
-La Actividad 2 traslada esta teoría a un escenario práctico de Capa 2. En ella, se configura un enlace troncal entre dos switches físicos distintos, demostrando cómo los dispositivos (PCs) pertenecientes a la misma VLAN (VLAN 10) pueden comunicarse, mientras se mantiene una VLAN de gestión (VLAN 99) separada para la administración de los propios switches.
+En la Actividad 1 vemos la teoría: qué son las PAN, LAN, MAN y WAN, cómo funcionan las VLANs como forma de separar redes lógicamente, y el protocolo IEEE 802.1Q que permite que múltiples VLANs pasen por un mismo cable usando etiquetas.
 
-La Actividad 3 integra todos los conceptos en una simulación compleja de Capa 3, que representa la red de una aeronave. El desafío en este escenario fue diseñar una red que cumpla con requisitos de seguridad y servicio diferenciados.
+La Actividad 2 es práctica básica de Capa 2. Acá configuramos un enlace trunk entre dos switches para que las PCs de la misma VLAN puedan comunicarse aunque estén conectadas a switches distintos. También creamos una VLAN separada (VLAN 99) solo para administrar los switches.
 
-Para lograr esta segmentación y control, se utilizaron las siguientes tecnologías:
-* VLANs (Redes Virtuales): Para separar lógicamente las tres redes de usuarios y la del servidor, aunque estuvieran conectadas al mismo switch físico.
-* Enrutamiento Inter-VLAN: Mediante el método "Router-on-a-Stick", para permitir que el router actúe como gateway para todas las VLANs y enrute el tráfico entre ellas.
-* ACLs (Listas de Control de Acceso): Para actuar como un "firewall", filtrando el tráfico y aplicando las reglas de negocio (ej. "Turista SÓLO ve al servidor").
-* NAT (Traducción de Direcciones de Red): Para permitir que las redes internas (Business y Admin) salgan a Internet usando una única IP pública.
+La Actividad 3 es la más completa: simulamos toda la red de un avión. Esto fue bastante más complicado porque había que cumplir con varios requisitos de seguridad y servicio al mismo tiempo.
+
+Para lograr todo esto usamos:
+* VLANs: Para separar las tres redes de usuarios y la del servidor, aunque estén todos en el mismo switch.
+* Enrutamiento Inter-VLAN: Con el método "Router-on-a-Stick", el router funciona como gateway para todas las VLANs y hace que se puedan comunicar entre ellas.
+* ACLs: Actúan como un firewall básico, filtrando el tráfico y aplicando las reglas del negocio (por ejemplo, que los de Turista solo puedan ver el servidor de entretenimiento).
+* NAT: Para que las redes de Business y Admin puedan salir a Internet compartiendo una sola IP pública.
 
 ---
 # Desarrollo
@@ -81,15 +86,15 @@ Las redes se clasifican comúnmente según su alcance geográfico de la siguient
 
 ### ¿Qué es una VLAN?
 
-Una **VLAN (Virtual Local Area Network)** o Red de Área Local Virtual, es un método para crear redes lógicas independientes dentro de una misma infraestructura de red física.
+Una **VLAN (Virtual Local Area Network)** o Red de Área Local Virtual es una forma de crear redes lógicas independientes dentro de la misma red física.
 
-Permite agrupar dispositivos en diferentes segmentos de red como si estuvieran en la misma red física, aunque estén conectados a diferentes switches. Su principal ventaja es que segmenta los dominios de broadcast, lo que mejora el rendimiento y la seguridad de la red. Los dispositivos en una VLAN no pueden comunicarse directamente con dispositivos en otra VLAN sin un dispositivo de Capa 3 (como un router).
+Permite agrupar dispositivos en diferentes segmentos de red como si estuvieran en la misma red física, aunque estén conectados a diferentes switches. Su principal ventaja es que segmenta los dominios de broadcast, lo que mejora el rendimiento y la seguridad de la red. Los dispositivos en una VLAN no pueden comunicarse directamente con dispositivos en otra VLAN sin un dispositivo de Capa 3.
 
 ### ¿Cómo se clasifican?
 
 Las VLANs se pueden clasificar según el método utilizado para asignar la pertenencia de un dispositivo a una VLAN:
 
-1.  **VLAN Estática (Basada en Puerto):** Es el método más común y el que se usa en este práctico. La pertenencia a la VLAN se configura manualmente asignando puertos específicos de un switch a una VLAN determinada. Cualquier dispositivo que se conecte a ese puerto pertenece automáticamente a esa VLAN. Es segura y fácil de configurar, pero menos flexible si un usuario se mueve mucho.
+1.  **VLAN Estática (Basada en Puerto):** La pertenencia a la VLAN se configura manualmente asignando puertos específicos de un switch a una VLAN determinada. Cualquier dispositivo que se conecte a ese puerto pertenece automáticamente a esa VLAN. Es segura y fácil de configurar, pero menos flexible si un usuario se mueve mucho.
 
 2.  **VLAN Dinámica (Basada en Dirección MAC):** La pertenencia se asigna dinámicamente según la dirección MAC del dispositivo que se conecta. Requiere un servidor central (llamado VMPS - VLAN Management Policy Server) que mantiene una base de datos de direcciones MAC y su VLAN correspondiente. Es más flexible, pero más compleja de administrar.
 
@@ -102,7 +107,7 @@ Las VLANs se pueden clasificar según el método utilizado para asignar la perte
 **Relación con las VLANs:**
 Su función principal es permitir que el tráfico de múltiples VLANs atraviese un único enlace físico (conocido como enlace troncal o trunk) entre switches, sin que se mezclen los dominios de broadcast.
 
-Para lograr esto, el protocolo 802.1Q funciona insertando una etiqueta (tag) de 4 bytes en el encabezado de la trama Ethernet original, justo después de la dirección MAC de origen.
+Para lograr esto, el protocolo 802.1Q agrega una etiqueta (tag) de 4 bytes en el encabezado de la trama Ethernet original, justo después de la dirección MAC de origen.
 
 
 Esta etiqueta contiene:
@@ -135,11 +140,11 @@ Implementar una topología que cuente con **2 switches** y **2 PCs**, asignando 
 
 ###  Topología y direccionamiento
 
-- Se agregaron **dos switches (2960-24TT)** y **dos PCs**.
-- Las PCs se conectaron de la siguiente manera:
+- Agregamos **dos switches (2960-24TT)** y **dos PCs**.
+- Conectamos las PCs así:
   - PC-A al **puerto Fa0/6** del **SW1**  
   - PC-B al **puerto Fa0/18** del **SW2**
-- Los switches se interconectaron mediante un cable **crossover** entre los puertos **Fa0/1 ↔ Fa0/1**
+- Los switches los conectamos entre sí con un cable **crossover** entre los puertos **Fa0/1 ↔ Fa0/1**
 
 
 | Device | Interface | IP Address    | Subnet Mask     | Default Gateway |
@@ -290,7 +295,7 @@ SW2(config-if)# end
   
 ### Topologia
 
-La topología implementada consiste en un router principal (Router0) que gestiona todo el tráfico y los servicios. Este se conecta a un switch que crea los segmentos de red. A este switch se conectan los dispositivos finales: Puntos de Acceso para las redes inalámbricas de Turista y Business, un PC para Admin y el Servidor de entretenimiento. Un segundo router (ISP) simula al proveedor de Internet y al destino 8.8.8.8
+La topología implementada consiste en un router principal (Router0) que gestiona todo el tráfico y los servicios. El mismo se conecta a un switch que crea los segmentos de red. A este switch se conectan los dispositivos finales: Puntos de Acceso para las redes inalámbricas de Turista y Business, un PC para Admin y el Servidor de entretenimiento. Un segundo router (ISP) simula al proveedor de Internet y al destino 8.8.8.8
 
 ![Topo](img/topo.png)
 
@@ -362,25 +367,25 @@ Se creó una ACL-PARA-NAT que especifica quién puede salir: permit 10.10.20.0 (
 ---
 ## Conclusiones 
 
-Este trabajo práctico permitió validar de forma integral el diseño e implementación de redes segmentadas, llevando los fundamentos teóricos a una simulación compleja.
+Este TP nos permitió aplicar de forma completa todo lo que vimos sobre redes segmentadas, desde la teoría hasta una simulación.
 
 El trabajo partió de la consolidación de los conceptos de la Actividad 1, donde se comprendió la importancia de las VLANs para aislar dominios de broadcast y el rol del protocolo 802.1Q.
 
-Estos conceptos se aplicaron con éxito en la Actividad 2. Las pruebas de conectividad verificaron que:
+En la Actividad 2 lo pusimos en práctica. Las pruebas mostraron que:
 
 * Las PCs pertenecientes a la VLAN 10 se comunicaron correctamente entre sí gracias al enlace troncal (trunk) configurado entre los switches.
 
 * Los switches pudieron administrarse de forma segura a través de su propia VLAN de gestión (VLAN 99). Esto demostró cómo la segmentación de Capa 2 permite aislar el tráfico y organizar la red de forma eficiente.
 
-Finalmente, la Actividad 3 integró todos estos conceptos en una simulación avanzada de Capa 3. Se diseñó e implementó con éxito la infraestructura de red de la aeronave, cumpliendo todos los objetivos. Las pruebas finales demostraron que la combinación de Enrutamiento Inter-VLAN, ACLs y NAT fue la solución correcta para:
+Por último, la Actividad 3 integró todos estos conceptos en una simulación avanzada de Capa 3. Se diseñó e implementó con éxito la infraestructura de red de la aeronave, cumpliendo todos los objetivos. Las pruebas finales demostraron que la combinación de Enrutamiento Inter-VLAN, ACLs y NAT fue la solución correcta para:
 
-* Aislar a la red Turista.
+* Aislar a la red Turista (solo servidor, sin Internet).
 
-* Dar acceso controlado a Internet a la red Business.
+* Dar acceso a Internet a Business de forma controlada.
 
-* Mantener el control total para la red Admin.
+* Mantener control total para Admin.
 
-En conjunto, el proyecto demuestra cómo estas tecnologías (VLANs, Trunks, ACLs y NAT) se combinan para formar una solución robusta y eficaz, permitiendo construir redes seguras que se adaptan a requisitos empresariales complejos.
+En resumen, pudimos ver cómo se combinan estas tecnologías (VLANs, Trunks, ACLs y NAT) para armar una red que cumple con requisitos específicos de seguridad y conectividad.
 
 
 
