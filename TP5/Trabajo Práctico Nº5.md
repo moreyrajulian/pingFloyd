@@ -78,6 +78,7 @@ Se muestra el publisher con los mensajes enviados
 
 
 ![suscriber](img/suscriber.png)
+
 Se muestra el suscriber recibiendo los mensajes enviados
 ## Actividad 4
 a)
