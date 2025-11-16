@@ -30,9 +30,15 @@
 ---
 
 ## Resumen
+Este trabajo práctico aborda el diseño y la simulación de una red local de tipo IoT utilizando el protocolo MQTT explorando los fundamentos del patrón de diseño Publish/Subscribe (Pub/Sub). El proyecto demostró experimentalmente la comunicación entre dispositivos desacoplados, incluyendo la configuración de tópicos para mensajería directa (lan/deviceA/status) y el uso de comodines (lan/broadcast/#) para simular broadcasting.
 
+La simulación principal integró tres sensores, un gateway y un control remoto. Los sensores publicaron datos en sus respectivos tópicos. El gateway se suscribió a todos los sensores (lan/#) para recopilar y almacenar los datos en un archivo CSV. Se implementó un sistema de control por broadcast (lan/comandos/broadcast) para enviar comandos "START" y "STOP" a todos los sensores. Finalmente, se validó la comunicación analizando los paquetes MQTT con Wireshark y se realizó un análisis teórico de la arquitectura, cubriendo aspectos de seguridad, fiabilidad y las implicaciones de depender de un broker centralizado.
 ## Introducción
+El modelo cliente-servidor tradicional presenta limitaciones en entornos donde los dispositivos pueden estar intermitentes o donde la comunicación "muchos a muchos" es necesaria.
 
+En este contexto, MQTT (Message Queuing Telemetry Transport) se ha consolidado como el estándar para la mensajería en IoT. Su arquitectura se basa en el patrón Publish/Subscribe (Pub/Sub), el cual introduce un intermediario que desacopla por completo a los clientes que publican información de aquellos que la consumen.
+
+El objetivo principal de este trabajo práctico es diseñar, implementar y analizar una red local simulada utilizando MQTT. Se busca comprender en profundidad el flujo de comunicación, desde la configuración de un broker central hasta el desarrollo de múltiples clientes que interactúan en roles de sensores, gateways y sistemas de control.
 # Desarrollo
 
 ## Actividad 1
