@@ -57,7 +57,7 @@ MQTT es un protocolo de mensajería basado en el patrón de diseño Pub/Sub (Pub
 
 Se lo usa principalmente para IoT:
 
-+ Domótica (Casas Inteligentes)
++ Domótica
 + Industria 4.0
 + Telemática
 + Monitoreo Médico
