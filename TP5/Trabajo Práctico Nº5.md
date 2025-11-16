@@ -116,9 +116,37 @@ A continuación se hará la captura de unos de los paquetes enviados mediante un
 ![wireshark](img/wireshark.png)
 
 ## Actividad 6
+a)
+En esta actividad estamos trabajando principalmente sobre TCP (Protocolo de Control de Transmisión). MQTT es un protocolo de capa de aplicación (Capa 7), lo que significa que necesita un protocolo de capa de transporte (Capa 4) confiable para funcionar. Además, MQTT se ejecuta sobre TCP para asegurar que los mensajes lleguen ordenados y sin errores al broker.
 
+b)
++ Integridad: Baja por defecto. TCP (la capa de transporte) tiene checksums para proteger contra corrupción accidental de datos, pero nada impide que un atacante en la red intercepte y modifique un paquete.
++ Confidencialidad: Se utiliza TLS en HiveMQ, que cifra todo el trafico entre cliente y broker.
++ Disponibilidad: Es el punto más débil. La disponibilidad de toda la red depende 100% del broker central. Si el broker (Mosquitto o HiveMQ) se cae, se apaga o crashea, toda la comunicación se detiene. 
 
-## Conclusiones 
+c)
+Estos juegan el rol de la fiabilidad."QoS" se refiere a la garantía de entrega del mensaje.
+
++ QoS 0 (At most once): El cliente envía el mensaje y no espera confirmación. Es el más rápido, pero un mensaje podría perderse si la red falla. Fiabilidad nula.
+
++ QoS 1 (At least once): El cliente envía el mensaje y lo reintenta hasta que recibe una confirmación (PUBACK) del broker. Garantiza que el mensaje llega, pero podría llegar duplicado si la confirmación se pierde. Fiabilidad media.
+
++ QoS 2 (Exactly once): Usa un handshake de 4 pasos para garantizar que el mensaje no solo llega, sino que se procesa una sola vez. Es el más fiable, pero también el más lento y el que más ancho de banda consume. Fiabilidad total.
+
+d)
+La ventaja principal y mas notoria es el total desacoplamiento que existe con un patrón de diseño de tipo Pub/Sub a comparación al de Cliente/Servidor: 
+
++ Desacoplamiento de espacio: El publicador (sensor) no necesita saber la dirección IP o la existencia del suscriptor (gateway), y viceversa. 
+
++ Desacoplamiento de Tiempo: El publicador puede enviar un mensaje aunque el suscriptor esté desconectado. El broker puede almacenar los mensajes y entregarlos cuando el suscriptor vuelva a estar online.
+
++ Escalabilidad: Permite agregar nuevos dispositivos sin afectar la estructura.
+
+e)
+MQTT no está hecho para grandes volúmenes de datos, fue diseñado para mensajes muy ligeros (pocos bytes o kilobytes). En una LAN se podrían tener protocolos donde los dispositivos se anuncian y "descubren" automáticamente. En MQTT, cada dispositivo debe tener la dirección IP del broker configurada de antemano ("hardcodeada"), entonces MQTT no termina teniendo el mismo comportamiento o funcionalidad de una LAN ya que todo tipo de comunicación depende de un broker central.
+
+f)
+La implicación más grave recae en que si el broker se cae, toda la red se paraliza. Ningún sensor o dispositivo podría reportar y ningún actuador puede ser controlado. Nuevamente todo el tráfico de la red pasa por el broker. Si existen miles de sensores publicando datos cada segundo, el broker puede verse saturado y volverse lento. Además la comunicación nunca es directa, el tener que depender de un broker termina agregando milisegundos de latecia comparado a una conexión directa.
 
 
 
