@@ -67,20 +67,56 @@ Entonces cuando un publisher envía un mensaje de algún tópico al broker, el b
 ## Actividad 3
 Verificación del broker:
 
-![publisher](publisher.png)
+![publisher](img/publisher.png)
 Se muestra el publisher con los mensajes enviados
 
 
-![suscriber](suscriber.png)
+![suscriber](img/suscriber.png)
 Se muestra el suscriber recibiendo los mensajes enviados
 ## Actividad 4
 a)
 A continuación se muestra la simulación de la comunicación directa entre dos nodos de una red local. El dispositivo A, publica en lan/deviceA/status, dispositivo B se suscribe a ese tópico y
 muestra los mensajes recibidos.
-![LAN](LAN.png)
+![LAN](img/LAN.png)
 b)
 Ahora se crea un tópico general lan/broadcast/#. Se configuran dos clientes para suscribirse a
-lan/broadcast/#. Desde un cliente “central”, se publicarán mensajes en lan/broadcast/all.
+lan/broadcast/#. Desde un cliente “central”, se publicarán mensajes en lan/broadcast/all. A continuación se muestran dos terminales que funcionan como clientes y una central que publica el mismo mensaje a ambas llegando en el mismo momento:
+![broadcast](img/broadcast.png)
+## Actividad 5
+Ahora haremos uso de tres sensores o clientes que simularan leer datos y publicarlos, estos son:
++ sensor_sala1_temp
++ sensor_sala1_hum
++ sensor_sala2_temp
+
+A continuación observamos los tres sensores en estado apagado aguardando por la señal para que comenzar a transmitir datos:
+![sensores](img/sensores.png)
+
+Utilizaremos un gateway o servidor que se suscribe a todos los sensores y guarda sus datos en un archivo CSV
+![gateway](img/gateway.png)
+
+Además, haremos uso de un control remoto o broadcasting que envía los comandos START o STOP para que los sensores (que estarán suscritos) empiezan o paren de simular. 
+![controlRemoto](img/controlRemoto.png)
+
+Una vez que enviamos el comando START los sensores comenzarán a enviar datos y el gateway a guardarlos:
+
+![sensoresEnviando](img/sensoresEnviando.png)
+
+![gatewayWorking](img/gatewayWorking.png)
+
+A su vez se irá llenando el archivo CSV:
+
+![datosSensores](img/datosSensores.png)
+
+Una vez que enviemos el comando de STOP el gateway dejará de guardar datos y los sensores de enviar información:
+
+![sensoresOff](img/sensoresOff.png)
+
+A continuación se hará la captura de unos de los paquetes enviados mediante un sniffer:
+
+![wireshark](img/wireshark.png)
+
+## Actividad 6
+
 
 ## Conclusiones 
 
